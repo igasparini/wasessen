@@ -8,6 +8,9 @@ export default {
       },
       backgroundImage: {
         'logo-gradient': 'linear-gradient(to top, #FEEEE1, #FFF8EF)'
+      },
+      fontFamily: {
+        'playful': ['Pacifico']
       }
     },
   },
