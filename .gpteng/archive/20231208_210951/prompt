@@ -1,0 +1,29 @@
+App: backend framework: FastAPI. Frontend framework: Sveltekit.
+
+Project: Develop a mobile-optimized web application named "wasessen" ("what to eat?") to provide users with recipe ideas based on their preferences.
+
+Primary Goal: The app should offer personalized recipe recommendations based on user-specified criteria like cooking time, calories, and optional keywords.
+
+Data Management:
+
+Utilize the structured data files in the "recipes" folder:
+dishes.csv: Contains dishes with ID, slug, and other information.
+ingredient_and_instructions.json: Holds ingredients and instructions keyed by dish slug.
+tags.csv: Associates tags with dishes.
+
+Key Features and Flow:
+
+Homepage Design:
+Feature the 'wasessen' logo (file: logo.png).
+Include two buttons: "Recipe now!" and "Weekly menu" (non-functional for now).
+Recipe Recommendation Feature:
+The "Recipe now!" button leads to a form for specifying cooking time, calories, and optional keywords.
+A submission button to process the request.
+Recipe Display Page:
+Display a recipe matching the user's criteria, sourced from the provided files.
+Implement efficient file reading and searching logic for quick recipe retrieval.
+UI/UX Design:
+Follow the color palette of the provided logo. Use bright colors.
+Ensure responsive design, optimized for mobile use.
+
+Develop the frontend in /frontend. Backend should already be done.

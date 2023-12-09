@@ -1,0 +1,19 @@
+I have a problem after running npm run dev:
+
+(wasessen) ivogasparini@Ivos-MacBook-Pro frontend % npm run dev
+
+> wasessen@1.0.0 dev
+> vite dev
+
+
+No routes found. If you are using a custom src/routes directory, make sure it is specified in svelte.config.js
+Forced re-optimization of dependencies
+
+  VITE v4.5.1  ready in 241 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+No routes found. If you are using a custom src/routes directory, make sure it is specified in svelte.config.js
+
+Help me debug. It isn't finding files in src/routes, but they are there.

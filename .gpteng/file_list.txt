@@ -1,0 +1,1 @@
+/Users/ivogasparini/Documents/Programming/wasessen/wasessen-app/frontend/svelte.config.js
