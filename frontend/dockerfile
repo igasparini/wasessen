@@ -20,7 +20,7 @@ RUN npm run build
 FROM nginx:stable-alpine as production-stage
 
 # Copy your custom server block configuration
-COPY ./wasessen_server.conf /etc/nginx/sites-enabled/default
+COPY ./wasessen_server.conf /etc/nginx/sites-enabled
 
 # Copy the built app to Nginx's serve directory
 COPY --from=build-stage /app/.svelte-kit /usr/share/nginx/html
