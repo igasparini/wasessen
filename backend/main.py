@@ -1,8 +1,6 @@
-import sys
-sys.path.insert(0, '..')
 import os
 from fastapi import FastAPI
-from backend.recipe import Recipe
+from recipe import Recipe
 from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware
 from supabase import create_client, Client
