@@ -1,6 +1,7 @@
 import pandas as pd
 import json
 from random import choice
+import os
 
 class Recipe:
     def __init__(self, cooking_time, calories, keywords):
@@ -10,11 +11,16 @@ class Recipe:
 
     def get_recipe(self):
         try:
-            dishes = pd.read_csv('/Users/ivogasparini/Documents/Programming/wasessen/wasessen-app/backend/recipes/dishes.csv')
-            with open('/Users/ivogasparini/Documents/Programming/wasessen/wasessen-app/backend/recipes/ingredient_and_instructions.json') as f:
-                ingredients_and_instructions = json.load(f)
-            tags = pd.read_csv('/Users/ivogasparini/Documents/Programming/wasessen/wasessen-app/backend/recipes/tags.csv')
+            base_dir = os.path.dirname(os.path.abspath(__file__))
+            dishes_path = os.path.join(base_dir, 'recipes', 'dishes.csv')
+            ingredients_and_instructions_path = os.path.join(base_dir, 'recipes', 'ingredient_and_instructions.json')
+            tags_path = os.path.join(base_dir, 'recipes', 'tags.csv')
 
+            dishes = pd.read_csv(dishes_path)
+            with open(ingredients_and_instructions_path) as f:
+                ingredients_and_instructions = json.load(f)
+            tags = pd.read_csv(tags_path)
+            
             # Filter dishes based on cooking_time and calories
             filtered_dishes = dishes[(dishes['total_time'] <= self.cooking_time) & (dishes['calories'] <= self.calories)]
 

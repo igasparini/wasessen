@@ -7,7 +7,7 @@ const config = defineConfig({
     proxy: {
       // Forward all requests from SvelteKit starting with '/api' to your FastAPI server
       '/api': {
-        target: 'http://localhost:8000', // The default URL FastAPI runs on
+        target: 'http://127.0.0.1:8000', // The default URL FastAPI runs on
         changeOrigin: true,
         secure: false,
       },

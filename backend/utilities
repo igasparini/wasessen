@@ -1,0 +1,9 @@
+conda deactivate
+conda deactivate
+.\env\Scripts\Activate.ps1
+uvicorn main:app --reload
+
+npm run den
+
+file navigation:
+cd .. #to go back 1 folder

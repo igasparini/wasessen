@@ -13,6 +13,36 @@ const ApiService = {
       console.error('API Request Error:', error);
       return { error: 'An error occurred while fetching data.' };
     }
+  },
+
+  async signup({ email, password }) {
+    try {
+      const response = await axios.post('/api/signup', { email, password });
+      return response.data;
+    } catch (error) {
+      console.error('API Request Error:', error);
+      return { error: 'An error occurred while signing up.' };
+    }
+  },
+
+  async login({ email, password }) {
+    try {
+      const response = await axios.post('/api/login', { email, password });
+      return response.data;
+    } catch (error) {
+      console.error('API Request Error:', error);
+      return { error: 'An error occurred while logging in.' };
+    }
+  },
+
+  async logout() {
+    try {
+      const response = await axios.post('/api/logout');
+      return response.data;
+    } catch (error) {
+      console.error('API Request Error:', error);
+      return { error: 'An error occurred while logging out.' };
+    }
   }
 };
 

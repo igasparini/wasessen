@@ -1,6 +1,7 @@
 <script>
   import ApiService from '$lib/ApiService';
   import { writable } from 'svelte/store';
+  import { goto } from '$app/navigation';
 
   let cooking_time = '';
   let calories = '';
@@ -28,6 +29,7 @@
   const changeParameters = () => {
     showForm.set(true);
   };
+
 </script>
 
 <main class="flex flex-col items-center justify-center min-h-screen bg-logo-gradient p-4">
@@ -52,7 +54,7 @@
         </div>
 
         <div class="flex items-center justify-between">
-          <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             Submit
           </button>
         </div>
@@ -62,7 +64,7 @@
   {/if}
 
   {#if recipe && !$showForm}  
-  <div class="max-w-md mx-auto p-4 shadow-lg">
+  <div class="max-w-md mx-auto p-4">
     <h2 class="font-playful text-3xl text-blue-500">{recipe.dish.name}</h2>
     <img class="w-full h-auto my-4" src={recipe.dish.thumbnail_url} alt={recipe.dish.name} />
     

@@ -1,8 +1,8 @@
 <script>
-  import { goto } from '$app/navigation';
+  import { goto, invalidateAll } from '$app/navigation';
+  import ApiService from '$lib/ApiService';
 
-  // Adjust the width and height classes to make the image bigger
-  let logoClasses = "h-64 w-64 md:h-96 md:w-96 mx-auto transition duration-150 ease-in-out -mb-16";
+  let logoClasses = "h-82 w-82 md:h-96 md:w-96 mx-auto transition duration-150 ease-in-out mb-20";
 
   function shakeLogo() {
     logoClasses += ' animate-shake';
@@ -10,12 +10,13 @@
       logoClasses = logoClasses.replace(' animate-shake', '');
     }, 500); // Animation lasts for 500ms
   }
+
 </script>
 
 <main class="flex flex-col items-center justify-center min-h-screen bg-logo-gradient p-4">
   <img src="/logo.png" alt="wasessen logo" class={logoClasses} on:click={shakeLogo} on:keyup={shakeLogo} />
 
-  <div class="mt-8 space-y-4 max-w-sm w-full">
+  <div class="-mt-20 space-y-4 max-w-sm w-full">
     <button 
       class="bg-indigo-600 hover:bg-indigo-700 text-white text-lg font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 w-full"
       on:click={() => goto('/recipe')}>
@@ -28,6 +29,7 @@
       Weekly menu
     </button>
   </div>
+
 </main>
 
 <style>
